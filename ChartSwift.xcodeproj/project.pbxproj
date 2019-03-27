@@ -14,6 +14,9 @@
 		2B3EF754224BD3750028FD2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B3EF752224BD3750028FD2D /* LaunchScreen.storyboard */; };
 		2B3EF75F224BD3750028FD2D /* ChartSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EF75E224BD3750028FD2D /* ChartSwiftTests.swift */; };
 		2B3EF76A224BD3750028FD2D /* ChartSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EF769224BD3750028FD2D /* ChartSwiftUITests.swift */; };
+		2B3EF778224BD3CB0028FD2D /* Highcharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3EF777224BD3CB0028FD2D /* Highcharts.framework */; };
+		2B3EF779224BD3D20028FD2D /* Highcharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3EF777224BD3CB0028FD2D /* Highcharts.framework */; };
+		2B3EF77A224BD3D20028FD2D /* Highcharts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3EF777224BD3CB0028FD2D /* Highcharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2B3EF77B224BD3D20028FD2D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2B3EF77A224BD3D20028FD2D /* Highcharts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2B3EF746224BD3740028FD2D /* ChartSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B3EF749224BD3740028FD2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +64,7 @@
 		2B3EF765224BD3750028FD2D /* ChartSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChartSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B3EF769224BD3750028FD2D /* ChartSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartSwiftUITests.swift; sourceTree = "<group>"; };
 		2B3EF76B224BD3750028FD2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B3EF777224BD3CB0028FD2D /* Highcharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Highcharts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3EF778224BD3CB0028FD2D /* Highcharts.framework in Frameworks */,
+				2B3EF779224BD3D20028FD2D /* Highcharts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +117,7 @@
 		2B3EF748224BD3740028FD2D /* ChartSwift */ = {
 			isa = PBXGroup;
 			children = (
+				2B3EF777224BD3CB0028FD2D /* Highcharts.framework */,
 				2B3EF749224BD3740028FD2D /* AppDelegate.swift */,
 				2B3EF74B224BD3740028FD2D /* ViewController.swift */,
 				2B3EF74D224BD3740028FD2D /* Main.storyboard */,
@@ -135,6 +156,7 @@
 				2B3EF742224BD3740028FD2D /* Sources */,
 				2B3EF743224BD3740028FD2D /* Frameworks */,
 				2B3EF744224BD3740028FD2D /* Resources */,
+				2B3EF77B224BD3D20028FD2D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -434,6 +456,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5TAAW86C9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ChartSwift",
+				);
 				INFOPLIST_FILE = ChartSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +478,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5TAAW86C9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ChartSwift",
+				);
 				INFOPLIST_FILE = ChartSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
