@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-            self.pie()
+            //self.pie()
+        self.column()
     }
 
 
@@ -24,19 +25,28 @@ class ViewController: UIViewController {
         let options = HIOptions()
         
         let chart = HIChart()
-        chart.type = "column"
+        //chart.alignTicks = 0
+        //chart.parallelAxes. = 0
+        //chart.type = "column"
         
         let title = HITitle()
-        title.text = "Stacked column chart"
+        title.text = ""//"Stacked column chart"
         
         let xaxis = HIXAxis()
-        // xaxis.categories = ["Apples", "Oranges", "Pears", "Grapes", "Bananas"]
+        xaxis.visible = false
+    
         
         let yaxis = HIYAxis()
-        
         yaxis.min = NSNumber(value: 0)
         yaxis.title = HITitle()
+        yaxis.visible = false
         // yaxis.title.text = "Total fruit consumption"
+        
+        let credits = HICredits()
+        credits.enabled = false
+        
+        let exporting = HIExporting()
+        exporting.enabled = false
         
         let tooltip = HITooltip()
         tooltip.pointFormat = "<span style=\"color:{series.color}\">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>"
@@ -48,11 +58,11 @@ class ViewController: UIViewController {
         
         let column1 = HIColumn()
         // column1.name = "John"
-        column1.data = [NSNumber(value: 5), NSNumber(value: 3), NSNumber(value: 4), NSNumber(value: 7), NSNumber(value: 2)]
+        column1.data = [NSNumber(value: 5), NSNumber(value: 3), NSNumber(value: 4)]
         
         let column2 = HIColumn()
         // column2.name = "Jane"
-        column2.data = [NSNumber(value: 2), NSNumber(value: 2), NSNumber(value: 3), NSNumber(value: 2), NSNumber(value: 1)]
+        column2.data = [NSNumber(value: 2), NSNumber(value: 2), NSNumber(value: 3)]
         
         //        let column3 = HIColumn()
         //        column3.name = "Joe"
@@ -63,8 +73,10 @@ class ViewController: UIViewController {
         options.xAxis = [xaxis]
         options.yAxis = [yaxis]
         options.tooltip = tooltip
+        options.credits = credits
+        options.exporting = exporting
         options.plotOptions = plotoptions
-        options.series = [column1, column2]
+        options.series = [column1]
         
         chartView.options = options
         
@@ -98,7 +110,11 @@ class ViewController: UIViewController {
         plotoptions.pie.dataLabels.inside = true
         plotoptions.pie.dataLabels.style = HICSSObject()
         plotoptions.pie.dataLabels.style.color = "black"
+        let credits = HICredits()
+        credits.enabled = 0
         
+        let exporting = HIExporting()
+        exporting.enabled = false
         let pie = HIPie()
         pie.name = "Brands"
         pie.data = [
@@ -135,7 +151,8 @@ class ViewController: UIViewController {
         options.tooltip = tooltip
         options.plotOptions = plotoptions
         options.series = [pie]
-        
+        options.credits = credits
+        options.exporting = exporting
         chartView.options = options
         
         view.addSubview(chartView)
